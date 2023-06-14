@@ -24,7 +24,7 @@ const getCurrentDate = (...params) => {
         params[0].style.transform = `translate(-50%, -35%) rotate(${getDegres(dateTime.hours, 0, 12, 0, 360)}deg)`;
         params[1].style.transform = `translate(-50%, -50%) rotate(${getDegres(dateTime.minutes, 0, 60, 0, 360)}deg)`;
         params[2].style.transform = `translate(-50%, -50%) rotate(${getDegres(dateTime.seconds, 0, 60, 0, 360)}deg)`;
-        params[3].innerText = `${dateTime.hours}:${dateTime.minutes}`;
+        params[3].innerText = `${dateTime.hours}:${dateTime.minutes < 10 ? '0' + dateTime.minutes : dateTime.minutes}`;
         params[4].innerText = `${dateTime.monthName}, ${dateTime.dayName}, ${dateTime.day}`;
     }, 1000);
 }
