@@ -27,6 +27,10 @@ body {
     gap: 1rem;
 }
 
+header {
+    padding: 1rem;
+}
+
 .clock-container {
     width: 14rem;
     aspect-ratio: 1/1;
@@ -35,39 +39,47 @@ body {
 
 .pointer {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     width: 0.2rem;
     height: 6rem;
-    background-color: rgb(141, 30, 30);
     border-radius: 1rem;
     transform-origin: bottom center;
 }
 
 .pointer.hour {
-    background-color: red;
-    transform: translate(-50%, -50%) rotate(0deg);
+    height: 4rem;
+    z-index: 1;
+    background-color: rgb(156, 102, 0);
+
+    transform: translate(-50%, -35%) rotate(0deg);
     transition: all 400ms linear;
 }
 
 .pointer.minute {
-    transform: translate(-50%, -50%) rotate(30deg);
+    background-color: rgb(173, 38, 38);
+    transform: translate(-50%, -50%) rotate(0deg);
     transition: all 400ms linear;
 }
 
 .pointer.second {
+    z-index: -1;
+    background-color: red;
+    width: 0.1rem;
+    
     transform: translate(-50%, -50%) rotate(80deg);
     transition: all 400ms linear;
 }
 
 .clock-circle {
     position: absolute;
-    top: 68%;
+    top: 48%;
     left: 47%;
     width: 0.8rem;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: rgb(172, 34, 34);
+    z-index: 20;
 }
 
 .clock-info {
