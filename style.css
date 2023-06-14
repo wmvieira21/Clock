@@ -28,15 +28,46 @@ body {
 }
 
 .clock-container {
-    width: 15rem;
+    width: 14rem;
     aspect-ratio: 1/1;
-    background-color: #aaaaaa49;
+    position: relative;
 }
 
 .pointer {
-    width: 0.3rem;
-    height: 2rem;
-    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.2rem;
+    height: 6rem;
+    background-color: rgb(141, 30, 30);
+    border-radius: 1rem;
+    transform-origin: bottom center;
+}
+
+.pointer.hour {
+    background-color: red;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: all 400ms linear;
+}
+
+.pointer.minute {
+    transform: translate(-50%, -50%) rotate(30deg);
+    transition: all 400ms linear;
+}
+
+.pointer.second {
+    transform: translate(-50%, -50%) rotate(80deg);
+    transition: all 400ms linear;
+}
+
+.clock-circle {
+    position: absolute;
+    top: 68%;
+    left: 47%;
+    width: 0.8rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: rgb(172, 34, 34);
 }
 
 .clock-info {
